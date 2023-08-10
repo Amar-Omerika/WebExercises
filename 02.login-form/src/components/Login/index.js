@@ -1,8 +1,22 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { ShowEyeIcon, HideEyeIcon } from "../../assets";
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [formFields, setFormFields] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const handleChange = (e: any) => {
+    setFormFields({
+      ...formFields,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // console.log(formFields);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -33,6 +47,7 @@ const Login = () => {
                 id="name"
                 name="name"
                 type="name"
+                onChange={handleChange}
                 autoComplete="name"
                 required
                 className="block w-full pl-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
@@ -51,6 +66,7 @@ const Login = () => {
                 id="email"
                 name="email"
                 type="email"
+                onChange={handleChange}
                 autoComplete="email"
                 required
                 className="block w-full pl-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
@@ -80,6 +96,7 @@ const Login = () => {
                 id="password"
                 name="password"
                 type={showPassword ? "text" : "password"}
+                onChange={handleChange}
                 autoComplete="current-password"
                 required
                 className="block w-full pl-2 pr-10 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
