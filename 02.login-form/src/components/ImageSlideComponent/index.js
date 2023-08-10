@@ -15,6 +15,13 @@ const images = [
     alt: "img3",
   },
 ];
+/**
+ * @descriptionDisplays
+ * The ImageSlideComponent is a React component that provides a simple and visually appealing image
+ * slideshow with automatic transitions. It allows you to display a sequence of images with smooth fade-in/out animation,
+ * enhancing the visual experience for your website or application.
+ * @author Amar Omerika
+ */
 
 const ImageSlideComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
