@@ -4,7 +4,7 @@ import { Login, ImageSlides } from "./components";
 
 function App() {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row h-screen">
       <Login />
       <ImageSlides />
     </div>
